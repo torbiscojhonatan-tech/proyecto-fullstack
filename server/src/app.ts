@@ -1,0 +1,13 @@
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+import serviciosRoutes from './routes/servicios.routes';
+import authRoutes from './routes/auth.routes';
+import { errorHandler } from './middleware/errorHandler';
+export const app = express();
+app.use(cors());
+app.use(express.json());
+app.get('/', (_req: Request, res: Response) => { res.json({ success: true, message: 'API PA3 Barbería' }); });
+app.use('/auth', authRoutes);
+app.use('/servicios', serviciosRoutes);
+app.use((_req: Request, res: Response) => { res.status(404).json({ success: false, error: 'Ruta no encontrada' }); });
+app.use(errorHandler);

@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { listarServicios, crearServicio, actualizarServicio, eliminarServicio } from '../controllers/servicios.controller';
+import { autenticar } from '../middlewares/auth';
+const router = Router();
+router.use(autenticar);
+router.get('/', listarServicios);
+router.post('/', crearServicio);
+router.put('/:id', actualizarServicio);
+router.delete('/:id', eliminarServicio);
+export default router;

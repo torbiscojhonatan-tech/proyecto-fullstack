@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+    --font-sans: 'Urbanist', sans-serif; 
+
+    /* 1. Superficies y Fondos */
+    --color-background: #F4F1E9;       /* Marfil cálido del lienzo general */
+    --color-surface: #FFFFFF;          /* Tarjetas y contenedores */
+    --color-surface-subtle: #EDE8DD;   /* Secciones secundarias y fondos suaves */
+
+    /* 2. Tipografía */
+    --color-foreground: #172538;       /* Azul carbón muy oscuro para títulos y texto principal */
+    --color-muted: #69717A;            /* Texto secundario, metadata y descripciones */
+
+    /* 3. Acciones y Marca */
+    --color-primary: #162C45;          /* Azul marino principal de Loki.AI */
+    --color-secondary: #28435F;        /* Azul acero para hover y elementos secundarios */
+    --color-accent: #C9A253;           /* Dorado elegante para CTA, líneas e indicadores */
+
+    /* 4. Estados e Interacción */
+    --color-border: #DDD7CA;           /* Bordes cálidos y discretos */
+    --color-ring: #C9A253;             /* Focus visible dorado */
+    --color-success: #4F7A68;          /* Verde desaturado compatible con la paleta */
+    --color-warning: #D49A45;          /* Ámbar */
+    --color-danger: #B95752;           /* Rojo apagado */
+}
+
+@layer base {
+    body{
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+    }
+    p{
+        @apply mb-4;
+    }
+    p:last-child{
+        @apply mb-0;
+    }
+}
